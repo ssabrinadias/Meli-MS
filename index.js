@@ -1,9 +1,11 @@
 const express = require("express");
-const Items = require("./routes/items");
+const search = require("./routes/search");
+require('dotenv/config')
 const app = express();
+const port = process.env.PORT || 3010
 
-app.use("/api", Items);
+app.use("/api", search);
 
-app.listen(3010, () => {
-	console.log("Listening on port 3010!");
+app.listen(port, () => {
+	console.log(`Listening on port ${port}!`);
 });
