@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const responseHandle = require("./responseHandle")
 
 const catalog = async queryData => {
     const url = `${process.env.BASE_URL}sites/MLA/search?q=${queryData}`;
@@ -8,7 +9,7 @@ const catalog = async queryData => {
 	try {
 		const res = await fetch(url, headers);
 		const data = await res.json();
-		return data;
+		return responseHandle(data);
 	} catch (err) {
 		return console.log(err);
 	}
