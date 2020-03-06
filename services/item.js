@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 
 const item = async queryData => {
-    const url = `${process.env.BASE_URL}/items/${queryData}`;
-    console.log(url)
+	const url = `${process.env.BASE_URL}/items/${queryData}`;
+	console.log('aqui')
 	const headers = {
 		"Content-Type": "application/json"
 	};
