@@ -16,6 +16,12 @@ module.exports = data => {
             currency_id:currency,
             amount
         },
+        seller_address:{
+            state: {
+                name,
+                id:idState
+            }
+        },
         price:decimal
     }) => ({
         id,
@@ -27,12 +33,16 @@ module.exports = data => {
         },
         picture, 
         condition,
-        free_shipping
+        free_shipping,
+        state:{
+            name,
+            idState
+        }
     }))
 
     const autor = {
-        name: 'sabrina',
-        lastname: 'dias'
+        name: '',
+        lastname: ''
     }
     return {items, categories, autor, ...others};
 };
