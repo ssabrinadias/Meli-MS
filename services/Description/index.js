@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const responseHandle = require("./responseHandle")
 
 const item = async queryData => {
     const url = `${process.env.BASE_URL}/items/${queryData}/description`;
@@ -9,7 +10,7 @@ const item = async queryData => {
 	try {
 		const res = await fetch(url, headers);
 		const data = await res.json();
-		return data;
+		return responseHandle(data)
 	} catch (err) {
 		return console.log(err);
 	}

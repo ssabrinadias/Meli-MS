@@ -4,27 +4,22 @@ module.exports = data => {
         id,
         sold_quantity,
         condition,
-        shipping:{
-            free_shipping
-        },
         price: amount,
         currency_id: currency,
         title,
         pictures,
     } = data
     
-    
     return {
         autor: {
-            name: '',
-            lastname: ''
+            name: 'Hello',
+            lastname: 'World'
         },
         item: {
             id,
             title,
             condition,
             sold_quantity,
-            free_shipping,
             price : {
                 amount,
                 decimal: amount,
