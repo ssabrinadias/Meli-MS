@@ -1,4 +1,10 @@
-
+const getAmount = (val)=>{
+    const valueFormat = val.toString().slice(0, -2)
+    if(valueFormat.length>=3) {
+        return parseInt(valueFormat)
+    }
+    return val
+}
 module.exports = data => {
     const {results, filters:[filter], ...others} = data;
 
@@ -29,7 +35,7 @@ module.exports = data => {
         price: {
             currency,
             decimal: amount,
-            amount
+            amount: getAmount(amount)
         },
         picture, 
         condition,

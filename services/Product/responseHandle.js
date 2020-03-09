@@ -1,4 +1,19 @@
+const getAmount = (val)=>{
+    const valueFormat = val.toString().slice(0, -2)
+    if(valueFormat.length>=3) {
+        return parseInt(valueFormat)
+    }
+    return val
+}
 
+const getDecimal = (val)=>{
+    const valString = val.toString();
+    const valueFormat = valString.slice(valString.length-2, valString.length)
+    if(valueFormat.length===2) {
+        return parseInt(valueFormat)
+    }
+    return val
+}
 module.exports = data => {
     const {
         id,
@@ -21,8 +36,8 @@ module.exports = data => {
             condition,
             sold_quantity,
             price : {
-                amount,
-                decimal: amount,
+                amount: getAmount(amount),
+                decimal: getDecimal(amount),
                 currency
             },
             pictures,
