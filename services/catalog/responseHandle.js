@@ -11,10 +11,10 @@ module.exports = data => {
         title,
         thumbnail:picture,
         condition,
+        price:amount,
         shipping:{free_shipping},
         installments:{
-            currency_id:currency,
-            amount
+            currency_id:currency
         },
         seller_address:{
             state: {
@@ -28,7 +28,7 @@ module.exports = data => {
         title,
         price: {
             currency,
-            decimal,
+            decimal: amount,
             amount
         },
         picture, 
