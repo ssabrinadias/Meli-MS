@@ -1,19 +1,6 @@
-const getAmount = (val)=>{
-    const valueFormat = val.toString().slice(0, -2)
-    if(valueFormat.length>=3) {
-        return parseInt(valueFormat)
-    }
-    return val
-}
+const getDecimal  =  require('../../helpers/currencyHandle').getDecimal
+const getAmount  =  require('../../helpers/currencyHandle').getAmount
 
-const getDecimal = (val)=>{
-    const valString = val.toString();
-    const valueFormat = valString.slice(valString.length-2, valString.length)
-    if(valueFormat.length===2) {
-        return parseInt(valueFormat)
-    }
-    return val
-}
 module.exports = data => {
     const {
         id,
@@ -25,6 +12,8 @@ module.exports = data => {
         pictures,
     } = data
     
+    
+
     return {
         autor: {
             name: 'Hello',

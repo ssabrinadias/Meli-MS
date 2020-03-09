@@ -1,10 +1,6 @@
-const getAmount = (val)=>{
-    const valueFormat = val.toString().slice(0, -2)
-    if(valueFormat.length>=3) {
-        return parseInt(valueFormat)
-    }
-    return val
-}
+const getDecimal  =  require('../../helpers/currencyHandle').getDecimal
+const getAmount  =  require('../../helpers/currencyHandle').getAmount
+
 module.exports = data => {
     const {results, filters:[filter], ...others} = data;
 
@@ -34,7 +30,7 @@ module.exports = data => {
         title,
         price: {
             currency,
-            decimal: amount,
+            decimal: getDecimal(amount),
             amount: getAmount(amount)
         },
         picture, 
